@@ -1,0 +1,49 @@
+{
+  "servers": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${workspaceFolder}"
+      ]
+    },
+    "git": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "mcp-server-git",
+        "--repository",
+        "${workspaceFolder}"
+      ],
+      "env": {
+        "GIT_PYTHON_GIT_EXECUTABLE": "C:\\Program Files\\Git\\cmd\\git.exe"
+      }
+    },
+    "research": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ]
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ]
+    }
+  },
+  "test_command": [
+    "python",
+    "-m",
+    "pytest"
+  ]
+}
